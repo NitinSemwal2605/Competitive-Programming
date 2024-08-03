@@ -1,47 +1,29 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+ 
+int main(){
     int t;
     cin >> t;
-    
-    while (t--) {
-        int n;
-        cin >> n;
-        vector<int> a(n);
-        int count_1 = 0, count_neg1 = 0;
-
-        // Count the number of 1s and -1s
-        for (int i = 0; i < n; ++i) {
-            cin >> a[i];
-            if (a[i] == 1) {
-                count_1++;
-            } else {
-                count_neg1++;
-            }
+    while(t--){
+        int sz, num, pos = 0, neg = 0, min_op = 0;
+        cin >> sz;
+        
+        // count number of positive and negative elements
+        for(int i = 0; i < sz; i++){
+            cin >> num;
+            if(num == 1) pos++;
+            else neg++;
         }
         
-        int sum = count_1 - count_neg1;
-        int min_operations = 0;
-        
-        // Check product condition
-        if (count_neg1 % 2 != 0) {
-            min_operations++;
-            count_neg1--;
-            count_1++;
+        // if sum of elements < 0
+        while(pos < neg){
+            pos++; 
+            neg--;
+            min_op++;
         }
         
-        // Check sum condition
-        sum = count_1 - count_neg1;
-        if (sum < 0) {
-            min_operations += -sum;
-        }
-        
-        cout << min_operations << endl;
+        if(neg % 2 != 0) cout << min_op + 1 << endl; // if product of elements is -1
+        else cout << min_op << endl;
     }
-    
-    return 0;
+    return 0; 
 }

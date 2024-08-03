@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "iosfwd": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "iostream": "cpp"
   }
 }
