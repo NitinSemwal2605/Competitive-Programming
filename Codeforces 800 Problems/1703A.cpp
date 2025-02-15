@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     int t;
     cin >> t; 
-    cin.ignore(); // Ignore newline character after integer input
+    cin.ignore(); 
     
 
     while (t--) {

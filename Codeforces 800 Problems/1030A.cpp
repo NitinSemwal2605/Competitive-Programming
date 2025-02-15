@@ -3,23 +3,23 @@ using namespace std;
 
 int main() {
     int n;
-    cin >> n; // Read the number of people
+    cin >> n; 
 
-    bool isHard = false; // Flag to determine if the problem is hard
+    bool isHard = false; 
 
     for (int i = 0; i < n; ++i) {
         int opinion;
-        cin >> opinion; // Read each person's opinion
+        cin >> opinion; 
 
         if (opinion == 1) {
-            isHard = true; // If any opinion is 1, the problem is hard
+            isHard = true;
         }
     }
 
     if (isHard) {
-        cout << "HARD" << endl; // Output HARD if any opinion was 1
+        cout << "HARD" << endl; 
     } else {
-        cout << "EASY" << endl; // Output EASY if all opinions were 0
+        cout << "EASY" << endl; 
     }
 
     return 0;
